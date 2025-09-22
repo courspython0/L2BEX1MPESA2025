@@ -1,0 +1,39 @@
+
+heure = input("Veuillez saisir l'heure sous le format (heur:minute:seconde) : ")
+date = input("Veullez saisir la date sous le format (AAAA-MM-JJ) : ")
+nom_expediteur = input("Veuillez saire votre nom : ")
+prenom_expediteur = input("Veuillez saisir votre prénom : ")
+tel_expeditaire = input("Veuillez saisir votre numero de téléphone (+243.....) : ")
+destinataire = input("Veillez saisir le nom du destinataire : ")
+tel_destinataire = input("Veillez saisir le numéro de téléphone du destinataire (+243.....) : ")
+montant = float(input("Veuillez saisir le nomtant à envoyer : "))
+reference = "TEST-001"
+TAUX_FRAIS = 1/100
+frais = 0
+if (montant * TAUX_FRAIS) < 100:
+    frais = 100
+else:
+    frais = (montant * TAUX_FRAIS)
+total_debit = montant + frais
+
+print("==== reçu (f-string) ====")
+print(f"Date/Heure   : {date} {heure}")
+print(f"Expéditeur   : {prenom_expediteur.capitalize()} {nom_expediteur.capitalize()}")
+print(f"Destinataire : {destinataire.capitalize()} ")
+print(f"Montant      : {format(montant, '.2f')} CDF")
+print(f"frais        : {format(frais, '.2f')} CDF")
+print(f"Total débité : {format(total_debit, '.2f')} CDF")
+print("==== reçu (str.format) ====")
+print("Date/Heure   : {} {}".format(date, heure))
+print("Expéditeur   : {} {}".format(prenom_expediteur.capitalize(), nom_expediteur.capitalize()))
+print("Destinataire : {} ".format(destinataire.capitalize()))
+print("Montant      : {:.2f} CDF".format(montant))
+print("frais        : {:.2f} CDF".format(frais))
+print("Total débité : {:.2f} CDF".format(total_debit))
+print("==== reçu (% opérateur) ====")
+print("Date/Heure   : %s %s" % (date, heure))
+print("Expéditeur   : %s %s" %(prenom_expediteur.capitalize(), nom_expediteur.capitalize()))
+print("Destinataire : %s " % (destinataire.capitalize()))
+print("Montant      : %.2f CDF" % (montant))
+print("frais        : %.2f CDF" % (frais))
+print("Total débité : %.2f CDF" % (total_debit))

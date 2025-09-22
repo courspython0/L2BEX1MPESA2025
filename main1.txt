@@ -1,0 +1,39 @@
+
+heure = "14:00:00"
+date = "2025-09-10"
+nom_expediteur = "Shongo"
+prenom_expediteur = "Danel"
+tel_expeditaire = "+2439700000000"
+destinataire = "Rosaline"
+tel_destinataire = "+2438200000000"
+montant = 25000
+reference = "TEST-001"
+TAUX_FRAIS = 1/100
+frais = 0
+if (montant * TAUX_FRAIS) < 100:
+    frais = 100
+else:
+    frais = (montant * TAUX_FRAIS)
+total_debit = montant + frais
+
+print("==== reçu (f-string) ====")
+print(f"Date/Heure   : {date} {heure}")
+print(f"Expéditeur   : {prenom_expediteur} {nom_expediteur}")
+print(f"Destinataire : {destinataire} ")
+print(f"Montant      : {format(montant, '.2f')} CDF")
+print(f"frais        : {format(frais, '.2f')} CDF")
+print(f"Total débité : {format(total_debit, '.2f')} CDF")
+print("==== reçu (str.format) ====")
+print("Date/Heure   : {} {}".format(date, heure))
+print("Expéditeur   : {} {}".format(prenom_expediteur, nom_expediteur))
+print("Destinataire : {} ".format(destinataire))
+print("Montant      : {:.2f} CDF".format(montant))
+print("frais        : {:.2f} CDF".format(frais))
+print("Total débité : {:.2f} CDF".format(total_debit))
+print("==== reçu (% opérateur) ====")
+print("Date/Heure   : %s %s" % (date, heure))
+print("Expéditeur   : %s %s" %(prenom_expediteur, nom_expediteur))
+print("Destinataire : %s " % (destinataire))
+print("Montant      : %.2f CDF" % (montant))
+print("frais        : %.2f CDF" % (frais))
+print("Total débité : %.2f CDF" % (total_debit))
